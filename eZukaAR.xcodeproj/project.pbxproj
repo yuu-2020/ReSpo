@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675A4810255461E700D8183A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A480F255461E700D8183A /* SettingViewController.swift */; };
+		675A48172554690800D8183A /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A48162554690800D8183A /* ARViewController.swift */; };
+		675A481C2554699600D8183A /* ezuka01.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 675A481B2554699600D8183A /* ezuka01.rcproject */; };
 		67647D62254FD1E600222C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67647D61254FD1E600222C4E /* AppDelegate.swift */; };
-		67647D64254FD1E600222C4E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 67647D63254FD1E600222C4E /* art.scnassets */; };
-		67647D66254FD1E600222C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67647D65254FD1E600222C4E /* ViewController.swift */; };
 		67647D69254FD1E600222C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67647D67254FD1E600222C4E /* Main.storyboard */; };
 		67647D6B254FD1E800222C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67647D6A254FD1E800222C4E /* Assets.xcassets */; };
 		67647D6E254FD1E800222C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67647D6C254FD1E800222C4E /* LaunchScreen.storyboard */; };
+		6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67648009254FEFC400222C4E /* HomeViewController.swift */; };
+		6764802E25507C5D00222C4E /* ARImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6764802D25507C5D00222C4E /* ARImageSelectViewController.swift */; };
+		E319754FC4309E7B170BF93B /* Pods_eZukaAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ECBB1B21D3F0E914640F7F5 /* Pods-eZukaAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.debug.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.debug.xcconfig"; sourceTree = "<group>"; };
+		675A480F255461E700D8183A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		675A48162554690800D8183A /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		675A481B2554699600D8183A /* ezuka01.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = ezuka01.rcproject; sourceTree = "<group>"; };
 		67647D5E254FD1E600222C4E /* eZukaAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eZukaAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67647D61254FD1E600222C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67647D63254FD1E600222C4E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		67647D65254FD1E600222C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		67647D68254FD1E600222C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67647D6A254FD1E800222C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67647D6D254FD1E800222C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67647D6F254FD1E800222C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67648009254FEFC400222C4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6764802D25507C5D00222C4E /* ARImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARImageSelectViewController.swift; sourceTree = "<group>"; };
+		94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eZukaAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5B782FDBAB92E6A36DB6F4 /* Pods-eZukaAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.release.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E319754FC4309E7B170BF93B /* Pods_eZukaAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		675A4822255473BE00D8183A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		675A4823255473C900D8183A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67647D67254FD1E600222C4E /* Main.storyboard */,
+				67647D6C254FD1E800222C4E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		675A4824255473D500D8183A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67647D61254FD1E600222C4E /* AppDelegate.swift */,
+				675A48162554690800D8183A /* ARViewController.swift */,
+				6764802D25507C5D00222C4E /* ARImageSelectViewController.swift */,
+				675A480F255461E700D8183A /* SettingViewController.swift */,
+				67648009254FEFC400222C4E /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		67647D55254FD1E600222C4E = {
 			isa = PBXGroup;
 			children = (
 				67647D60254FD1E600222C4E /* eZukaAR */,
 				67647D5F254FD1E600222C4E /* Products */,
+				C87B90A6A31E4C84C5587188 /* Pods */,
+				BF474395CF6D1C9F2374289B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +97,31 @@
 		67647D60254FD1E600222C4E /* eZukaAR */ = {
 			isa = PBXGroup;
 			children = (
-				67647D61254FD1E600222C4E /* AppDelegate.swift */,
-				67647D63254FD1E600222C4E /* art.scnassets */,
-				67647D65254FD1E600222C4E /* ViewController.swift */,
-				67647D67254FD1E600222C4E /* Main.storyboard */,
+				675A4824255473D500D8183A /* Controller */,
+				675A4823255473C900D8183A /* View */,
+				675A4822255473BE00D8183A /* Model */,
+				675A481B2554699600D8183A /* ezuka01.rcproject */,
 				67647D6A254FD1E800222C4E /* Assets.xcassets */,
-				67647D6C254FD1E800222C4E /* LaunchScreen.storyboard */,
 				67647D6F254FD1E800222C4E /* Info.plist */,
 			);
 			path = eZukaAR;
+			sourceTree = "<group>";
+		};
+		BF474395CF6D1C9F2374289B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C87B90A6A31E4C84C5587188 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ECBB1B21D3F0E914640F7F5 /* Pods-eZukaAR.debug.xcconfig */,
+				AF5B782FDBAB92E6A36DB6F4 /* Pods-eZukaAR.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67647D72254FD1E800222C4E /* Build configuration list for PBXNativeTarget "eZukaAR" */;
 			buildPhases = (
+				C2815FB9605A0E2D32F50451 /* [CP] Check Pods Manifest.lock */,
 				67647D5A254FD1E600222C4E /* Sources */,
 				67647D5B254FD1E600222C4E /* Frameworks */,
 				67647D5C254FD1E600222C4E /* Resources */,
+				D4B6332C31BD8FD89A45739A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,7 +183,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67647D64254FD1E600222C4E /* art.scnassets in Resources */,
 				67647D6E254FD1E800222C4E /* LaunchScreen.storyboard in Resources */,
 				67647D6B254FD1E800222C4E /* Assets.xcassets in Resources */,
 				67647D69254FD1E600222C4E /* Main.storyboard in Resources */,
@@ -133,13 +191,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C2815FB9605A0E2D32F50451 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eZukaAR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4B6332C31BD8FD89A45739A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eZukaAR/Pods-eZukaAR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eZukaAR/Pods-eZukaAR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eZukaAR/Pods-eZukaAR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		67647D5A254FD1E600222C4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67647D66254FD1E600222C4E /* ViewController.swift in Sources */,
 				67647D62254FD1E600222C4E /* AppDelegate.swift in Sources */,
+				675A48172554690800D8183A /* ARViewController.swift in Sources */,
+				6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */,
+				675A481C2554699600D8183A /* ezuka01.rcproject in Sources */,
+				675A4810255461E700D8183A /* SettingViewController.swift in Sources */,
+				6764802E25507C5D00222C4E /* ARImageSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +387,7 @@
 		};
 		67647D73254FD1E800222C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ECBB1B21D3F0E914640F7F5 /* Pods-eZukaAR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +407,7 @@
 		};
 		67647D74254FD1E800222C4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF5B782FDBAB92E6A36DB6F4 /* Pods-eZukaAR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
