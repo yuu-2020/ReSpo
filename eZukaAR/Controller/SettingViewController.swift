@@ -71,6 +71,10 @@ extension SettingViewController: UITableViewDataSource {
         return tableTitle[section][0]
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = UIColor.init(displayP3Red: 56/255, green: 67/255, blue: 81/255, alpha: 1)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
