@@ -6,15 +6,30 @@
 //
 
 import UIKit
-import ARKit
-import RealityKit
+
+var tableTitle = [["通知設定", "通知"],
+                  ["言語", "表示言語"],
+                  ["アカウント", "ID", "パスワード", "メールアドレス"],
+                  ["連携", "VR"]]
+
+var tableSubtitle = [["", "ON"],
+                     ["", "日本語"],
+                     ["", "MagTaro0829", "登録済み", "登録済み"],
+                     ["", "連携済み"]]
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     
 
@@ -28,4 +43,34 @@ class SettingViewController: UIViewController {
     }
     */
 
+}
+
+extension SettingViewController: UITableViewDelegate {
+}
+
+extension SettingViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableTitle.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableTitle[section].count - 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = tableTitle[indexPath.section][indexPath.row + 1]
+        cell.detailTextLabel?.text = tableSubtitle[indexPath.section][indexPath.row + 1]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return tableTitle[section][0]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
 }
