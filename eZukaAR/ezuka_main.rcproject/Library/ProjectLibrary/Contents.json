@@ -1,0 +1,22 @@
+[
+  {
+    "libraryIdentifier" : "c6f5e8b22213bb75b0f6b35e1e71b5b7",
+    "format" : "model",
+    "displayName" : "usdzTest05.usdz"
+  },
+  {
+    "libraryIdentifier" : "ca2a1f70e4d228c48b8728706f8ef051",
+    "format" : "model",
+    "displayName" : "fieldTest02.usdz"
+  },
+  {
+    "libraryIdentifier" : "724f7a71efc08590bcdfd4dfc3515974",
+    "format" : "model",
+    "displayName" : "ballTest02.usdz"
+  },
+  {
+    "libraryIdentifier" : "d678b437a12e518968bd14ad541a88bf",
+    "format" : "image",
+    "displayName" : "BasketCard_edit.jpeg"
+  }
+]

@@ -17,7 +17,7 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        guard let anchor = try? Ezuka01.loadSample() else { return }
+        guard let anchor = try? EzukaMain.loadMain() else { return }
         
         arView.scene.addAnchor(anchor)
     }

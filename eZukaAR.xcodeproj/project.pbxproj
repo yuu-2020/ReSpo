@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675444122555166E00ADE75F /* ezuka_main.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 675444112555166E00ADE75F /* ezuka_main.rcproject */; };
 		675A4810255461E700D8183A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A480F255461E700D8183A /* SettingViewController.swift */; };
 		675A48172554690800D8183A /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A48162554690800D8183A /* ARViewController.swift */; };
 		675A481C2554699600D8183A /* ezuka01.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 675A481B2554699600D8183A /* ezuka01.rcproject */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1ECBB1B21D3F0E914640F7F5 /* Pods-eZukaAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.debug.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.debug.xcconfig"; sourceTree = "<group>"; };
+		675444112555166E00ADE75F /* ezuka_main.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = ezuka_main.rcproject; sourceTree = "<group>"; };
 		675A480F255461E700D8183A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		675A48162554690800D8183A /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		675A481B2554699600D8183A /* ezuka01.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = ezuka01.rcproject; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				675A4823255473C900D8183A /* View */,
 				675A4822255473BE00D8183A /* Model */,
 				675A481B2554699600D8183A /* ezuka01.rcproject */,
+				675444112555166E00ADE75F /* ezuka_main.rcproject */,
 				67647D6A254FD1E800222C4E /* Assets.xcassets */,
 				67647D6F254FD1E800222C4E /* Info.plist */,
 			);
@@ -244,6 +247,7 @@
 				675A481C2554699600D8183A /* ezuka01.rcproject in Sources */,
 				675A4810255461E700D8183A /* SettingViewController.swift in Sources */,
 				6764802E25507C5D00222C4E /* ARImageSelectViewController.swift in Sources */,
+				675444122555166E00ADE75F /* ezuka_main.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
