@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,6 @@
 		6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67648009254FEFC400222C4E /* HomeViewController.swift */; };
 		6764802E25507C5D00222C4E /* ARImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6764802D25507C5D00222C4E /* ARImageSelectViewController.swift */; };
 		67CE0A98255917A5007D6457 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE0A97255917A5007D6457 /* EditViewController.swift */; };
-		E319754FC4309E7B170BF93B /* Pods_eZukaAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E319754FC4309E7B170BF93B /* Pods_eZukaAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +151,6 @@
 				67647D5A254FD1E600222C4E /* Sources */,
 				67647D5B254FD1E600222C4E /* Frameworks */,
 				67647D5C254FD1E600222C4E /* Resources */,
-				D4B6332C31BD8FD89A45739A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,23 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4B6332C31BD8FD89A45739A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-eZukaAR/Pods-eZukaAR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-eZukaAR/Pods-eZukaAR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eZukaAR/Pods-eZukaAR-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -416,7 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S45HM3ZPWW;
+				DEVELOPMENT_TEAM = P446P7T2SM;
 				INFOPLIST_FILE = eZukaAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,7 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S45HM3ZPWW;
+				DEVELOPMENT_TEAM = P446P7T2SM;
 				INFOPLIST_FILE = eZukaAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
