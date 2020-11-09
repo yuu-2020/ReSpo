@@ -72,6 +72,16 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "fontview", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "fontview") {
+            let subVC: EditFontViewController = segue.destination as! EditFontViewController
+            let playerTarget: CGRect = self.imageView.bounds
+            let effectTarget: CGRect = self.effectImageView.bounds
+            subVC.playerImage = imageView.screenShot(target: playerTarget)
+            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
+        }
     }
 }
