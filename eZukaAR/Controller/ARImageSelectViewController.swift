@@ -10,11 +10,29 @@ import UIKit
 class ARImageSelectViewController: UIViewController{
     
     
-
+    @IBOutlet weak var imageView: UIImageView!
+    
+    // サンプルイメージ
+    var sampleImage = UIImage(named: "BasketCard_edit")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        imageView.image = sampleImage
+    }
+    
+    @IBAction func imageTapped(_ sender: Any) {
+        performSegue(withIdentifier: "editview", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "editview") {
+            let subVC: ImageDetailViewController = segue.destination as! ImageDetailViewController
+            
+            subVC.selectImage = sampleImage
+        }
     }
     
 

@@ -16,9 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BasketCard_edit" translatesAutoresizingMaskIntoConstraints="NO" id="TGj-sG-gIz">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGj-sG-gIz">
                                 <rect key="frame" x="16" y="93" width="170" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZF1-WO-cEb" appends="YES" id="30b-YN-Zmw"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BasketCard_edit" translatesAutoresizingMaskIntoConstraints="NO" id="bKE-LU-JZC">
                                 <rect key="frame" x="189" y="93" width="170" height="183"/>
@@ -33,10 +37,48 @@
                         <color key="backgroundColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="AR作成" id="OWn-AD-1y7"/>
+                    <connections>
+                        <outlet property="imageView" destination="TGj-sG-gIz" id="TiA-Zy-3Yc"/>
+                        <segue destination="1jL-rE-pwh" kind="show" identifier="editview" id="MZf-ym-Ak4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiC-74-HaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZF1-WO-cEb">
+                    <connections>
+                        <action selector="imageTapped:" destination="LCI-42-Zs3" id="cQp-W3-xIj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2164" y="-174.06296851574214"/>
+        </scene>
+        <!--写真-->
+        <scene sceneID="ctl-77-qWF">
+            <objects>
+                <viewController id="1jL-rE-pwh" customClass="ImageDetailViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gIy-Ph-qGj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckk-oj-Nvy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8c9-eo-3wE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <navigationItem key="navigationItem" title="写真" id="g70-xW-Zpp"/>
+                    <connections>
+                        <outlet property="imageView" destination="ckk-oj-Nvy" id="Efr-Xl-bLx"/>
+                        <outlet property="tapGes" destination="vde-wN-ndu" id="aa3-5w-U0w"/>
+                        <segue destination="2KA-pc-Y9l" kind="showDetail" id="H7a-xh-Yq6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HPC-Lh-Uvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vde-wN-ndu"/>
+            </objects>
+            <point key="canvasLocation" x="2909.5999999999999" y="-174.06296851574214"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="hne-Lf-9HM">
@@ -141,14 +183,6 @@
                     <view key="view" contentMode="scaleToFill" id="VVk-fP-k4e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cWf-8I-gL7">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lEP-O0-GvM"/>
                         <color key="backgroundColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -280,6 +314,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rwg-3T-qXS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1225" y="1818"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="GYI-zZ-fKx">
+            <objects>
+                <viewController id="2KA-pc-Y9l" customClass="EditViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YYj-uJ-M0T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHN-1G-L3J">
+                                <rect key="frame" x="0.0" y="20" width="375" height="550"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hPV-CJ-JHU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZcG-yW-gAG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBB-Tr-OM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3632.8000000000002" y="-174.06296851574214"/>
         </scene>
     </scenes>
     <resources>
