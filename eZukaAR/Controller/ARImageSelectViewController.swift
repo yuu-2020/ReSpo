@@ -13,7 +13,7 @@ class ARImageSelectViewController: UIViewController{
     @IBOutlet weak var imageView: UIImageView!
     
     // サンプルイメージ
-    var sampleImage = UIImage(named: "BasketCard_edit")
+    var sampleImage = UIImage(named: "BasketCard")
     
     override func viewDidLoad() {
         super.viewDidLoad()
