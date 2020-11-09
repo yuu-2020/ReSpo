@@ -25,7 +25,10 @@ class ImageDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        imageView.image = selectImage
+        
+        /// 以下タブバー，ナビゲーションバーの設定
+        
         // デフォルトのタブ位置情報を保存
         tabBarFrame = (tabBarController?.tabBar.frame)!
         // デフォルトのナビゲーションバーの位置情報を保存
