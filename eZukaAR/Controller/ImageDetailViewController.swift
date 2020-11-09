@@ -70,4 +70,15 @@ class ImageDetailViewController: UIViewController {
 
     }
 
+    @IBAction func editButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "editview", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "editview") {
+            let subVC: EditViewController = segue.destination as! EditViewController
+            
+            subVC.editImage = selectImage
+        }
+    }
 }

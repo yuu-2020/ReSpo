@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" title="AR作成" id="OWn-AD-1y7"/>
                     <connections>
                         <outlet property="imageView" destination="TGj-sG-gIz" id="TiA-Zy-3Yc"/>
-                        <segue destination="1jL-rE-pwh" kind="show" identifier="editview" id="MZf-ym-Ak4"/>
+                        <segue destination="1jL-rE-pwh" kind="show" identifier="detailview" id="MZf-ym-Ak4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiC-74-HaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -68,11 +68,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                     </view>
-                    <navigationItem key="navigationItem" title="写真" id="g70-xW-Zpp"/>
+                    <navigationItem key="navigationItem" title="写真" id="g70-xW-Zpp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xyl-sN-zPD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="VsE-XH-pXz">
+                                <rect key="frame" x="276" y="4" width="83" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="編集"/>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="1jL-rE-pwh" eventType="touchUpInside" id="Sgo-ea-Ru6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="ckk-oj-Nvy" id="Efr-Xl-bLx"/>
                         <outlet property="tapGes" destination="vde-wN-ndu" id="aa3-5w-U0w"/>
-                        <segue destination="2KA-pc-Y9l" kind="showDetail" id="H7a-xh-Yq6"/>
+                        <segue destination="2KA-pc-Y9l" kind="showDetail" identifier="editview" id="H7a-xh-Yq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPC-Lh-Uvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@ import UIKit
 
 class EditViewController: UIViewController {
 
-    var selectImage: UIImage?
+    var editImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()

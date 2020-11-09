@@ -24,11 +24,11 @@ class ARImageSelectViewController: UIViewController{
     }
     
     @IBAction func imageTapped(_ sender: Any) {
-        performSegue(withIdentifier: "editview", sender: nil)
+        performSegue(withIdentifier: "detailview", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "editview") {
+        if (segue.identifier == "detailview") {
             let subVC: ImageDetailViewController = segue.destination as! ImageDetailViewController
             
             subVC.selectImage = sampleImage
