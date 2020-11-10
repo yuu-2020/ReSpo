@@ -9,90 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--AR作成-->
-        <scene sceneID="ZWj-EK-5Xs">
-            <objects>
-                <viewController id="LCI-42-Zs3" customClass="ARImageSelectViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1qA-VM-24d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGj-sG-gIz">
-                                <rect key="frame" x="16" y="93" width="170" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ZF1-WO-cEb" appends="YES" id="30b-YN-Zmw"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BasketCard_edit" translatesAutoresizingMaskIntoConstraints="NO" id="bKE-LU-JZC">
-                                <rect key="frame" x="189" y="93" width="170" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BasketCard_edit" translatesAutoresizingMaskIntoConstraints="NO" id="igP-Ky-f1r">
-                                <rect key="frame" x="16" y="284" width="170" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="srh-tV-Hvp"/>
-                        <color key="backgroundColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="AR作成" id="OWn-AD-1y7"/>
-                    <connections>
-                        <outlet property="imageView" destination="TGj-sG-gIz" id="TiA-Zy-3Yc"/>
-                        <segue destination="1jL-rE-pwh" kind="show" identifier="detailview" id="MZf-ym-Ak4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RiC-74-HaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ZF1-WO-cEb">
-                    <connections>
-                        <action selector="imageTapped:" destination="LCI-42-Zs3" id="cQp-W3-xIj"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="2164" y="-174.06296851574214"/>
-        </scene>
-        <!--写真-->
-        <scene sceneID="ctl-77-qWF">
-            <objects>
-                <viewController id="1jL-rE-pwh" customClass="ImageDetailViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gIy-Ph-qGj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckk-oj-Nvy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8c9-eo-3wE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <gestureRecognizers/>
-                    </view>
-                    <navigationItem key="navigationItem" title="写真" id="g70-xW-Zpp">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xyl-sN-zPD">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="VsE-XH-pXz">
-                                <rect key="frame" x="276" y="4" width="83" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="編集"/>
-                                <connections>
-                                    <action selector="editButtonPressed:" destination="1jL-rE-pwh" eventType="touchUpInside" id="Sgo-ea-Ru6"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="imageView" destination="ckk-oj-Nvy" id="Efr-Xl-bLx"/>
-                        <outlet property="tapGes" destination="vde-wN-ndu" id="aa3-5w-U0w"/>
-                        <segue destination="2KA-pc-Y9l" kind="presentation" identifier="editview" id="H7a-xh-Yq6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HPC-Lh-Uvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="vde-wN-ndu"/>
-            </objects>
-            <point key="canvasLocation" x="2909.5999999999999" y="-174.06296851574214"/>
-        </scene>
         <!--ホーム-->
         <scene sceneID="hne-Lf-9HM">
             <objects>
@@ -131,10 +47,52 @@
             </objects>
             <point key="canvasLocation" x="2165.5999999999999" y="-822.63868065967017"/>
         </scene>
-        <!--Item-->
+        <!--カード作成-->
+        <scene sceneID="bjS-xb-dN3">
+            <objects>
+                <viewController id="J4b-RK-xCf" customClass="SelectImageController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uBN-8a-N1V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81k-cp-6SD">
+                                <rect key="frame" x="236" y="577" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="カード作成"/>
+                                <connections>
+                                    <segue destination="2KA-pc-Y9l" kind="show" identifier="toEdit" id="6xf-gj-XaI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw4-ix-OmU">
+                                <rect key="frame" x="45" y="576" width="102" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="写真を選択"/>
+                                <connections>
+                                    <action selector="imageSetting:" destination="J4b-RK-xCf" eventType="touchUpInside" id="nrU-yT-ibu"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChE-1A-5ef">
+                                <rect key="frame" x="16" y="65" width="343" height="503"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HWX-nm-Wdx"/>
+                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="カード作成" id="Eiw-Ws-Nly"/>
+                    <navigationItem key="navigationItem" title="カード作成" id="mYA-bm-eOp"/>
+                    <connections>
+                        <outlet property="imageView" destination="ChE-1A-5ef" id="Gsq-Ya-gBo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zjw-0X-X6Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2164" y="-174"/>
+        </scene>
+        <!--プロジェクト-->
         <scene sceneID="YAh-E7-bux">
             <objects>
-                <viewController id="EO5-ky-1uD" customClass="ProjectViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="プロジェクト" id="EO5-ky-1uD" customClass="ProjectViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QWn-cG-ZcU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +100,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K3z-Qf-GwF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5aW-9e-lrv">
                                     <size key="itemSize" width="182" height="268"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -160,9 +118,12 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krt-EH-ER3">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="260"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="customSize" width="182" height="268"/>
                                     </collectionViewCell>
                                 </cells>
@@ -173,13 +134,14 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pxH-rv-wab"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="fZm-GP-5xa"/>
+                    <tabBarItem key="tabBarItem" title="プロジェクト" id="fZm-GP-5xa"/>
+                    <navigationItem key="navigationItem" title="プロジェクト" id="mUF-Ab-wrb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4u-Bm-8PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-114.40000000000001" y="-1425.3373313343329"/>
+            <point key="canvasLocation" x="2164" y="1145"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="5KN-UY-96W">
@@ -197,7 +159,6 @@
                         <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="4lY-Ad-CRq"/>
                         <segue destination="YlI-8n-rQR" kind="relationship" relationship="viewControllers" id="WLI-Rl-itA"/>
                         <segue destination="C7N-tb-eeF" kind="relationship" relationship="viewControllers" id="KvI-aO-19U"/>
-                        <segue destination="EO5-ky-1uD" kind="relationship" relationship="viewControllers" id="9L1-yQ-CDH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btL-ED-OBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -239,22 +200,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224.8" y="477.21139430284859"/>
-        </scene>
-        <!--プロジェクト-->
-        <scene sceneID="CCp-ax-UdZ">
-            <objects>
-                <viewController id="g7c-5z-v46" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VVk-fP-k4e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="lEP-O0-GvM"/>
-                        <color key="backgroundColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="プロジェクト" id="mMJ-wX-l8H"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4CJ-uK-5a7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2166" y="1145"/>
         </scene>
         <!--設定-->
         <scene sceneID="dNI-JY-VDw">
@@ -319,11 +264,11 @@
             </objects>
             <point key="canvasLocation" x="1226.4000000000001" y="-822.63868065967017"/>
         </scene>
-        <!--AR作成-->
+        <!--カード作成-->
         <scene sceneID="d2o-jz-7wJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sLK-GQ-tft" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="AR作成" image="greetingcard.fill" catalog="system" selectedImage="greetingcard.fill" id="ieJ-QH-wKM"/>
+                    <tabBarItem key="tabBarItem" title="カード作成" image="greetingcard.fill" catalog="system" selectedImage="greetingcard.fill" id="ieJ-QH-wKM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r1g-eh-umv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -332,7 +277,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LCI-42-Zs3" kind="relationship" relationship="rootViewController" id="hpj-Xc-Rjf"/>
+                        <segue destination="J4b-RK-xCf" kind="relationship" relationship="rootViewController" id="Hld-kE-Jim"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xki-vu-7gl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -352,7 +297,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="g7c-5z-v46" kind="relationship" relationship="rootViewController" id="LBs-7l-6KS"/>
+                        <segue destination="EO5-ky-1uD" kind="relationship" relationship="rootViewController" id="9VC-UN-A7e"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHO-RT-5kJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -384,19 +329,19 @@
             <objects>
                 <viewController id="2KA-pc-Y9l" customClass="EditViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YYj-uJ-M0T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHN-1G-L3J">
-                                <rect key="frame" x="0.0" y="56" width="375" height="484"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="445"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgw-EM-nkA">
-                                <rect key="frame" x="0.0" y="56" width="375" height="484"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="445"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-nl-lBU">
-                                <rect key="frame" x="0.0" y="548" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="532" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="tsl-GF-eMz"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="tTo-j4-gQ6"/>
@@ -406,19 +351,29 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-H8-rCx">
-                                <rect key="frame" x="313" y="14" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ar-lT-oUt">
+                                <rect key="frame" x="54" y="494" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="保存"/>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="bNG-LF-qyj"/>
+                                    <action selector="saveCard:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="D3p-1B-p27"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-lr-TE9">
+                                <rect key="frame" x="16" y="44" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="テーマ"/>
+                                <connections>
+                                    <action selector="theme:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="6UA-yI-Y8Q"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hPV-CJ-JHU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZcG-yW-gAG"/>
+                    <navigationItem key="navigationItem" id="ZcG-yW-gAG">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="effectImageView" destination="Lgw-EM-nkA" id="IqY-62-Y3k"/>
                         <outlet property="imageView" destination="nHN-1G-L3J" id="2xV-yC-3rv"/>
@@ -428,14 +383,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBB-Tr-OM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3632.8000000000002" y="-174.06296851574214"/>
+            <point key="canvasLocation" x="3101.5999999999999" y="-174.06296851574214"/>
         </scene>
         <!--Edit Font View Controller-->
         <scene sceneID="k98-E6-y7p">
             <objects>
                 <viewController id="fMZ-nh-68k" customClass="EditFontViewController" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k8c-cv-Av6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTu-x9-VEP">
@@ -448,7 +403,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X8h-T3-qtK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZOM-hA-jZ3"/>
                     <connections>
@@ -458,11 +413,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHX-bK-NPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4320.8000000000002" y="-174.06296851574214"/>
+            <point key="canvasLocation" x="4036" y="-174"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BasketCard_edit" width="660" height="960"/>
         <image name="arkit" catalog="system" width="128" height="128"/>
         <image name="arrow.uturn.left" catalog="system" width="128" height="112"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
