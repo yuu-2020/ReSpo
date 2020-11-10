@@ -394,6 +394,16 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIE-1d-H4E">
+                                <rect key="frame" x="0.0" y="56" width="375" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7O-cg-sYL">
+                                <rect key="frame" x="0.0" y="544" width="375" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="CAo-yE-g7G"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="TwA-m0-KV5"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X8h-T3-qtK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -402,6 +412,8 @@
                     <connections>
                         <outlet property="effectImageView" destination="oF0-bI-ghR" id="9En-Oc-do3"/>
                         <outlet property="imageView" destination="tTu-x9-VEP" id="pxF-bB-1QB"/>
+                        <outlet property="nameEffectImageView" destination="TIE-1d-H4E" id="Lf5-Sh-kXP"/>
+                        <outlet property="sc" destination="d7O-cg-sYL" id="70l-qF-dJY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHX-bK-NPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
