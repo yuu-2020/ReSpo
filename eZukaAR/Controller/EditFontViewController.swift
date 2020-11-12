@@ -128,6 +128,25 @@ class EditFontViewController: UIViewController {
             let filename = getDocumentsDirectory().appendingPathComponent("test.png")
             try? data.write(to: filename)
         }
+        
+        
+        // ダイアログをつける
+        
+        //アラートのタイトル
+        let dialog = UIAlertController(title: "画像を保存しました！", message: "作成した画像はプロジェクトからいつでも確認・編集できます．", preferredStyle: .alert)
+        
+        // 閉じたあとにナビゲーションコントローラの最初の画面に戻る
+        let close = UIAlertAction(title: "OK", style: .default, handler: {
+            (action: UIAlertAction!) in
+            //実際の処理
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        
+        // ダイアログ
+        dialog.addAction(close)
+        //実際に表示させる
+        self.present(dialog, animated: true, completion: nil)
+        
     }
     
     func getDocumentsDirectory() -> URL {

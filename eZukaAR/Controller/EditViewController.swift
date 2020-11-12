@@ -97,22 +97,6 @@ class EditViewController: UIViewController {
             subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
             subVC.buttonNum = buttonNum
         }
-        
-        if (segue.identifier == "toTheme6") {
-            let subVC: EditFontViewController6 = segue.destination as! EditFontViewController6
-            let playerTarget: CGRect = self.imageView.bounds
-            let effectTarget: CGRect = self.effectImageView.bounds
-            subVC.playerImage = imageView.screenShot(target: playerTarget)
-            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
-        }
-        
-        if (segue.identifier == "toTheme7") {
-            let subVC: EditFontViewController7 = segue.destination as! EditFontViewController7
-            let playerTarget: CGRect = self.imageView.bounds
-            let effectTarget: CGRect = self.effectImageView.bounds
-            subVC.playerImage = imageView.screenShot(target: playerTarget)
-            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
-        }
     }
     
 }
