@@ -10,8 +10,6 @@
 		0C6D5E1ABD6004312E913245 /* Pods_eZukaAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */; };
 		63871EAE2559B71F004A6788 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63871EAD2559B71F004A6788 /* ProjectViewController.swift */; };
 		63BAC24C255A243200780333 /* SelectImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BAC24B255A243200780333 /* SelectImageController.swift */; };
-		63BAC265255AF00A00780333 /* EditFontViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BAC264255AF00A00780333 /* EditFontViewController6.swift */; };
-		63BAC268255AF20A00780333 /* EditFontViewController7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BAC267255AF20A00780333 /* EditFontViewController7.swift */; };
 		671177FA255DB31900F3180E /* UIView+ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671177F9255DB31900F3180E /* UIView+ImageProcessing.swift */; };
 		674E1A5E2555AA2A00026A5D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E1A5D2555AA2A00026A5D /* MainTabBarController.swift */; };
 		674E816E2559913C003BF63B /* EditFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E816D2559913C003BF63B /* EditFontViewController.swift */; };
@@ -32,8 +30,6 @@
 		1ECBB1B21D3F0E914640F7F5 /* Pods-eZukaAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.debug.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.debug.xcconfig"; sourceTree = "<group>"; };
 		63871EAD2559B71F004A6788 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		63BAC24B255A243200780333 /* SelectImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageController.swift; sourceTree = "<group>"; };
-		63BAC264255AF00A00780333 /* EditFontViewController6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFontViewController6.swift; sourceTree = "<group>"; };
-		63BAC267255AF20A00780333 /* EditFontViewController7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFontViewController7.swift; sourceTree = "<group>"; };
 		671177F9255DB31900F3180E /* UIView+ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ImageProcessing.swift"; sourceTree = "<group>"; };
 		674E1A5D2555AA2A00026A5D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		674E816D2559913C003BF63B /* EditFontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFontViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +92,6 @@
 				674E816D2559913C003BF63B /* EditFontViewController.swift */,
 				63871EAD2559B71F004A6788 /* ProjectViewController.swift */,
 				63BAC24B255A243200780333 /* SelectImageController.swift */,
-				63BAC264255AF00A00780333 /* EditFontViewController6.swift */,
-				63BAC267255AF20A00780333 /* EditFontViewController7.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,9 +246,7 @@
 				675A48172554690800D8183A /* ARViewController.swift in Sources */,
 				63871EAE2559B71F004A6788 /* ProjectViewController.swift in Sources */,
 				674E1A5E2555AA2A00026A5D /* MainTabBarController.swift in Sources */,
-				63BAC268255AF20A00780333 /* EditFontViewController7.swift in Sources */,
 				674E817125599D68003BF63B /* UIView+ScreenShot.swift in Sources */,
-				63BAC265255AF00A00780333 /* EditFontViewController6.swift in Sources */,
 				6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */,
 				675A481C2554699600D8183A /* ezuka01.rcproject in Sources */,
 				675A4810255461E700D8183A /* SettingViewController.swift in Sources */,
