@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6D5E1ABD6004312E913245 /* Pods_eZukaAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */; };
 		63871EAE2559B71F004A6788 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63871EAD2559B71F004A6788 /* ProjectViewController.swift */; };
 		63BAC24C255A243200780333 /* SelectImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BAC24B255A243200780333 /* SelectImageController.swift */; };
 		63BAC265255AF00A00780333 /* EditFontViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BAC264255AF00A00780333 /* EditFontViewController6.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6D5E1ABD6004312E913245 /* Pods_eZukaAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
