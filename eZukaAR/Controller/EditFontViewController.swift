@@ -121,6 +121,15 @@ class EditFontViewController: UIViewController {
             imageArray.append(reNameEffectImage)
         }
         
+        /*
+         
+         MARK: - ラベルも画像にして保存したかったけど，文字の位置調整がうまくいかず．．．
+         
+         // テキストを画像に変換して保存
+         imageArray.append(UIImage.imageWithLabel(label: label))
+         
+         */
+        
         // 画像を合成
         let composedImage = UIImage.ComposeUIImage(UIImageArray: imageArray, width: frameWidth, height: frameHeight)
         

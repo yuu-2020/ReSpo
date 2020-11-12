@@ -10,7 +10,6 @@
 		0C6D5E1ABD6004312E913245 /* Pods_eZukaAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */; };
 		63871EAE2559B71F004A6788 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63871EAD2559B71F004A6788 /* ProjectViewController.swift */; };
 		63BAC24C255A243200780333 /* SelectImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BAC24B255A243200780333 /* SelectImageController.swift */; };
-		671177FA255DB31900F3180E /* UIView+ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671177F9255DB31900F3180E /* UIView+ImageProcessing.swift */; };
 		674E1A5E2555AA2A00026A5D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E1A5D2555AA2A00026A5D /* MainTabBarController.swift */; };
 		674E816E2559913C003BF63B /* EditFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E816D2559913C003BF63B /* EditFontViewController.swift */; };
 		674E817125599D68003BF63B /* UIView+ScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674E817025599D68003BF63B /* UIView+ScreenShot.swift */; };
@@ -24,13 +23,13 @@
 		67647D6E254FD1E800222C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67647D6C254FD1E800222C4E /* LaunchScreen.storyboard */; };
 		6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67648009254FEFC400222C4E /* HomeViewController.swift */; };
 		67CE0A98255917A5007D6457 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE0A97255917A5007D6457 /* EditViewController.swift */; };
+		67F1FFD1255DD1E800F352E9 /* UIImage+ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1ECBB1B21D3F0E914640F7F5 /* Pods-eZukaAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.debug.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.debug.xcconfig"; sourceTree = "<group>"; };
 		63871EAD2559B71F004A6788 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		63BAC24B255A243200780333 /* SelectImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageController.swift; sourceTree = "<group>"; };
-		671177F9255DB31900F3180E /* UIView+ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ImageProcessing.swift"; sourceTree = "<group>"; };
 		674E1A5D2555AA2A00026A5D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		674E816D2559913C003BF63B /* EditFontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFontViewController.swift; sourceTree = "<group>"; };
 		674E817025599D68003BF63B /* UIView+ScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ScreenShot.swift"; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		67647D6F254FD1E800222C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67648009254FEFC400222C4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		67CE0A97255917A5007D6457 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageProcessing.swift"; sourceTree = "<group>"; };
 		94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eZukaAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B782FDBAB92E6A36DB6F4 /* Pods-eZukaAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.release.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				674E817025599D68003BF63B /* UIView+ScreenShot.swift */,
-				671177F9255DB31900F3180E /* UIView+ImageProcessing.swift */,
+				67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F1FFD1255DD1E800F352E9 /* UIImage+ImageProcessing.swift in Sources */,
 				67647D62254FD1E600222C4E /* AppDelegate.swift in Sources */,
 				674E816E2559913C003BF63B /* EditFontViewController.swift in Sources */,
 				675A48172554690800D8183A /* ARViewController.swift in Sources */,
@@ -251,7 +252,6 @@
 				675A481C2554699600D8183A /* ezuka01.rcproject in Sources */,
 				675A4810255461E700D8183A /* SettingViewController.swift in Sources */,
 				675444122555166E00ADE75F /* ezuka_main.rcproject in Sources */,
-				671177FA255DB31900F3180E /* UIView+ImageProcessing.swift in Sources */,
 				63BAC24C255A243200780333 /* SelectImageController.swift in Sources */,
 				67CE0A98255917A5007D6457 /* EditViewController.swift in Sources */,
 			);
