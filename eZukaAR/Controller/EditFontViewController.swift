@@ -121,28 +121,31 @@ class EditFontViewController: UIViewController {
     
     // 画像を保存
     @IBAction func saveCard(_ sender: Any) {
+        // 画像を合成するための配列
+        var imageArray: [UIImage] = []
+        
+        // 画像サイズ
         let frameWidth = self.view.frame.maxX
         let frameHeight = self.view.frame.maxY
         
         // リサイズ
-        guard let reImageViewImage = imageView.image,
-              let reImage = UIImage.ResizeUIImage(image: reImageViewImage, width: frameWidth, height: frameHeight)
-        else {
-            fatalError()
+        if let reImageViewImage = imageView.image,
+           let reImage = UIImage.ResizeUIImage(image: reImageViewImage, width: frameWidth, height: frameHeight) {
+            imageArray.append(reImage)
         }
-        guard let reEffectImageViewImage = effectImageView.image,
-              let reEffectImage = UIImage.ResizeUIImage(image: reEffectImageViewImage, width: frameWidth, height: frameHeight)
-        else {
-            fatalError()
+        
+        if let reEffectImageViewImage = effectImageView.image,
+           let reEffectImage = UIImage.ResizeUIImage(image: reEffectImageViewImage, width: frameWidth, height: frameHeight) {
+            imageArray.append(reEffectImage)
         }
-        guard let reNameEffectImageViewImage = nameEffectImageView.image,
-              let reNameEffectImage = UIImage.ResizeUIImage(image: reNameEffectImageViewImage, width: frameWidth, height: frameHeight)
-        else {
-            fatalError()
+        
+        if let reNameEffectImageViewImage = nameEffectImageView.image,
+           let reNameEffectImage = UIImage.ResizeUIImage(image: reNameEffectImageViewImage, width: frameWidth, height: frameHeight) {
+            imageArray.append(reNameEffectImage)
         }
         
         // 画像を合成
-        let composedImage = UIImage.ComposeUIImage(UIImageArray: [reImage, reEffectImage, reNameEffectImage], width: frameWidth, height: frameHeight)
+        let composedImage = UIImage.ComposeUIImage(UIImageArray: imageArray, width: frameWidth, height: frameHeight)
         
         if let data = composedImage?.pngData() {
             let filename = getDocumentsDirectory().appendingPathComponent("test.png")
