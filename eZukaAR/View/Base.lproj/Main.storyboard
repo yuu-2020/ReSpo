@@ -55,26 +55,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81k-cp-6SD">
-                                <rect key="frame" x="236" y="577" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81k-cp-6SD">
+                                <rect key="frame" x="247" y="498" width="47" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="カード作成"/>
+                                <state key="normal" image="EditButton"/>
                                 <connections>
                                     <segue destination="2KA-pc-Y9l" kind="show" identifier="toEdit" id="6xf-gj-XaI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw4-ix-OmU">
-                                <rect key="frame" x="45" y="576" width="102" height="32"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChE-1A-5ef">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="写真を選択"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vw4-ix-OmU">
+                                <rect key="frame" x="94" y="518" width="35" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="CameraButton"/>
                                 <connections>
                                     <action selector="imageSetting:" destination="J4b-RK-xCf" eventType="touchUpInside" id="nrU-yT-ibu"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChE-1A-5ef">
-                                <rect key="frame" x="16" y="65" width="343" height="503"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HWX-nm-Wdx"/>
                         <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjw-0X-X6Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2164" y="-174"/>
+            <point key="canvasLocation" x="2164" y="-174.06296851574214"/>
         </scene>
         <!--プロジェクト-->
         <scene sceneID="YAh-E7-bux">
@@ -333,11 +333,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHN-1G-L3J">
-                                <rect key="frame" x="0.0" y="44" width="375" height="445"/>
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgw-EM-nkA">
-                                <rect key="frame" x="0.0" y="44" width="375" height="445"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgw-EM-nkA" userLabel="Effect Image View">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-nl-lBU">
@@ -351,20 +351,28 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.2196078431372549" green="0.2627450980392157" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ar-lT-oUt">
-                                <rect key="frame" x="54" y="494" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-mj-3xQ">
+                                <rect key="frame" x="50" y="480" width="22" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="保存"/>
+                                <state key="normal" image="テーマ3"/>
                                 <connections>
-                                    <action selector="saveCard:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="D3p-1B-p27"/>
+                                    <action selector="theme3:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="BNP-Ik-dtO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-lr-TE9">
-                                <rect key="frame" x="16" y="44" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-Ig-NVn">
+                                <rect key="frame" x="97" y="480" width="22" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="テーマ"/>
+                                <state key="normal" image="テーマ6"/>
                                 <connections>
-                                    <action selector="theme:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="6UA-yI-Y8Q"/>
+                                    <action selector="theme6:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="tjH-3o-1XJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoB-DI-fYp" customClass="to">
+                                <rect key="frame" x="142" y="480" width="23" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="テーマ7"/>
+                                <connections>
+                                    <action selector="theme7:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="nBy-0N-DGI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -375,10 +383,12 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="effectImageView" destination="Lgw-EM-nkA" id="IqY-62-Y3k"/>
-                        <outlet property="imageView" destination="nHN-1G-L3J" id="2xV-yC-3rv"/>
+                        <outlet property="effectImageView" destination="Lgw-EM-nkA" id="ke8-p6-Be5"/>
+                        <outlet property="imageView" destination="nHN-1G-L3J" id="ASN-O4-pVe"/>
                         <outlet property="sc" destination="y4W-nl-lBU" id="tVC-S0-Paa"/>
-                        <segue destination="fMZ-nh-68k" kind="show" identifier="fontview" id="51R-mO-RpF"/>
+                        <segue destination="fMZ-nh-68k" kind="show" identifier="toTheme3" id="51R-mO-RpF"/>
+                        <segue destination="Bj5-Uq-XSn" kind="show" identifier="toTheme6" id="6Hk-jb-PbN"/>
+                        <segue destination="y3z-U9-j0b" kind="show" identifier="toTheme7" id="GYJ-VL-kGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBB-Tr-OM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,13 +404,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTu-x9-VEP">
-                                <rect key="frame" x="0.0" y="56" width="375" height="480"/>
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oF0-bI-ghR">
-                                <rect key="frame" x="0.0" y="56" width="375" height="480"/>
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hIQ-th-vL7" userLabel="Name Effect Image View">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fn8-qK-a7f" userLabel="Sc">
+                                <rect key="frame" x="0.0" y="532" width="375" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="8kU-Rv-nTl"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="EQd-Gq-cfE"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfC-Lt-6cl">
+                                <rect key="frame" x="50" y="483" width="104" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SaveButton"/>
+                                <connections>
+                                    <action selector="saveCard:" destination="fMZ-nh-68k" eventType="touchUpInside" id="aJA-bs-Xro"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X8h-T3-qtK"/>
                         <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,14 +437,103 @@
                     <connections>
                         <outlet property="effectImageView" destination="oF0-bI-ghR" id="9En-Oc-do3"/>
                         <outlet property="imageView" destination="tTu-x9-VEP" id="pxF-bB-1QB"/>
+                        <outlet property="nameEffectImageView" destination="hIQ-th-vL7" id="mm8-uB-dlc"/>
+                        <outlet property="sc" destination="fn8-qK-a7f" id="gHd-wc-sel"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHX-bK-NPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4036" y="-861"/>
+        </scene>
+        <!--Edit Font View Controller6-->
+        <scene sceneID="flZ-nc-MzI">
+            <objects>
+                <viewController id="Bj5-Uq-XSn" customClass="EditFontViewController6" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5le-KZ-C1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64U-Be-Y3j">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dll-DN-5TM" userLabel="Effect Image View">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSY-On-Y5J">
+                                <rect key="frame" x="0.0" y="532" width="375" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="7A7-6E-Bch"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="yUM-Oo-KYL"/>
+                            </scrollView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-tj-QRX" userLabel="Name Effect Image View">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="51T-g0-1Ef"/>
+                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3hC-tq-Ule"/>
+                    <connections>
+                        <outlet property="effectImageView" destination="dll-DN-5TM" id="Jyv-Em-A5m"/>
+                        <outlet property="imageView" destination="64U-Be-Y3j" id="Rpj-Ks-OTV"/>
+                        <outlet property="nameEffectImageView" destination="hWd-tj-QRX" id="q18-Ov-3Rx"/>
+                        <outlet property="sc" destination="SSY-On-Y5J" id="Mhf-HD-Uxc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uS0-16-bJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="4036" y="-174"/>
+        </scene>
+        <!--Edit Font View Controller7-->
+        <scene sceneID="SZN-28-j0i">
+            <objects>
+                <viewController id="y3z-U9-j0b" customClass="EditFontViewController7" customModule="eZukaAR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2jr-m4-D2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TI-zf-Z11">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2Y-kv-AP1" userLabel="Effect Image View">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQA-3u-gZZ" userLabel="Name Effect Image View">
+                                <rect key="frame" x="50" y="60" width="274" height="399"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8op-lZ-frI">
+                                <rect key="frame" x="0.0" y="532" width="375" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="xbA-ar-ypS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="6Nh-UF-qbB"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nc9-0D-KmR"/>
+                        <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yhw-ap-7O5"/>
+                    <connections>
+                        <outlet property="effectImageView" destination="o2Y-kv-AP1" id="S2k-NH-E4g"/>
+                        <outlet property="imageView" destination="2TI-zf-Z11" id="Urp-M1-LMn"/>
+                        <outlet property="nameEffectImageView" destination="hQA-3u-gZZ" id="Dps-WP-eVu"/>
+                        <outlet property="sc" destination="8op-lZ-frI" id="ISP-L9-xVR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k6r-Cx-XN5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4036" y="513"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CameraButton" width="35" height="25"/>
+        <image name="EditButton" width="47" height="64"/>
+        <image name="SaveButton" width="104" height="41"/>
         <image name="arkit" catalog="system" width="128" height="128"/>
         <image name="arrow.uturn.left" catalog="system" width="128" height="112"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
@@ -426,6 +543,9 @@
         <image name="ゴルフ" width="199" height="160"/>
         <image name="サッカー" width="197" height="159"/>
         <image name="テニス" width="199" height="159"/>
+        <image name="テーマ3" width="22" height="33"/>
+        <image name="テーマ6" width="22" height="33"/>
+        <image name="テーマ7" width="23" height="33"/>
         <image name="ラグビー" width="197" height="160"/>
         <image name="野球" width="411" height="204"/>
         <systemColor name="systemBackgroundColor">

@@ -11,8 +11,8 @@ import UIKit
 class ProjectViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     // 画像
-    let images = ["BasketCard", "BasketCard_edit"]
-    
+    // let images = ["BasketCard", "BasketCard_edit"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,7 +22,8 @@ class ProjectViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count // 表示するセルの数
+        // return images.count // 表示するセルの数
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,7 +32,8 @@ class ProjectViewController: UIViewController, UICollectionViewDataSource, UICol
         // Tag番号を使ってImageViewのインスタンス生成
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
-        let cellImage = UIImage(named: images[indexPath.row])
+        // let cellImage = UIImage(named: images[indexPath.row])
+        let cellImage = readimage()
         // UIImageをUIImageViewのimageとして設定
         imageView.image = cellImage
         
@@ -40,6 +42,12 @@ class ProjectViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    func readimage() -> UIImage?  {
+        let documentsURL:URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL:URL = documentsURL.appendingPathComponent("test.png")
+        return UIImage(contentsOfFile: fileURL.path)
     }
     
 }

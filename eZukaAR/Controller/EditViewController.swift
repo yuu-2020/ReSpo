@@ -11,8 +11,8 @@ class EditViewController: UIViewController {
 
     var editImage: UIImage?
     
-    @IBOutlet weak var effectImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var effectImageView: UIImageView!
     @IBOutlet weak var sc: UIScrollView!
     
     var uv: UIView = UIView()
@@ -70,18 +70,43 @@ class EditViewController: UIViewController {
         }
         
     }
+
+    @IBAction func theme3(_ sender: Any) {
+        performSegue(withIdentifier: "toTheme3", sender: nil)
+    }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "fontview", sender: nil)
+    @IBAction func theme6(_ sender: Any) {
+        performSegue(withIdentifier: "toTheme6", sender: nil)
+    }
+    
+    @IBAction func theme7(_ sender: Any) {
+        performSegue(withIdentifier: "toTheme7", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "fontview") {
+        if (segue.identifier == "toTheme3") {
             let subVC: EditFontViewController = segue.destination as! EditFontViewController
             let playerTarget: CGRect = self.imageView.bounds
             let effectTarget: CGRect = self.effectImageView.bounds
             subVC.playerImage = imageView.screenShot(target: playerTarget)
             subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
         }
+        
+        if (segue.identifier == "toTheme6") {
+            let subVC: EditFontViewController6 = segue.destination as! EditFontViewController6
+            let playerTarget: CGRect = self.imageView.bounds
+            let effectTarget: CGRect = self.effectImageView.bounds
+            subVC.playerImage = imageView.screenShot(target: playerTarget)
+            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
+        }
+        
+        if (segue.identifier == "toTheme7") {
+            let subVC: EditFontViewController7 = segue.destination as! EditFontViewController7
+            let playerTarget: CGRect = self.imageView.bounds
+            let effectTarget: CGRect = self.effectImageView.bounds
+            subVC.playerImage = imageView.screenShot(target: playerTarget)
+            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
+        }
     }
+    
 }

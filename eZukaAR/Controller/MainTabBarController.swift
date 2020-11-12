@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ extension MainTabBarController: UITabBarControllerDelegate {
             self.present(second, animated: true, completion: nil)
             return false
         }
+        
         return true
     }
 }
