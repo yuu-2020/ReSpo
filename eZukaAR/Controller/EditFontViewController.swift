@@ -22,7 +22,7 @@ class EditFontViewController: UIViewController {
     var uv: UIView = UIView()
     var label: UILabel = UILabel()
     
-    var playerName: String = String()
+    var playerName: String = "Masaharu Taguchi"
     var font: UIFont = UIFont()
     
     
@@ -74,7 +74,7 @@ class EditFontViewController: UIViewController {
         }
         
         label.removeFromSuperview()
-        label = createLabel(text: "選手名だよ〜〜", font: UIFont.boldSystemFont(ofSize: 20), theme: theme)
+        label = createLabel(text: playerName, font: UIFont.boldSystemFont(ofSize: 20), theme: theme)
         self.view.addSubview(label)
         
     }
