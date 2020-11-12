@@ -11,6 +11,7 @@ class EditFontViewController: UIViewController {
     
     var playerImage: UIImage?
     var effectedImage: UIImage?
+    var buttonNum: Int?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var effectImageView: UIImageView!
@@ -35,13 +36,26 @@ class EditFontViewController: UIViewController {
         // 位置とサイズを決める
         uv.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*2, height: 70)
         
+        // テーマ
+        guard let theme = buttonNum else {
+            return
+        }
+        
         // uiButtonを作成する
         for i in 0..<6 {
+            var tag = 0
+            if theme == 3 {
+                tag = i + 9
+            } else if theme == 6 {
+                tag = i + 15
+            } else if theme == 7 {
+                tag = i + 21
+            }
             let button: UIButton = UIButton()
             button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
-            button.tag = i+9
+            button.tag = tag
             button.addTarget(self, action: #selector(tap), for: .touchUpInside)
-            let buttonImage: UIImage = UIImage(named: String((i+8)+1))!
+            let buttonImage: UIImage = UIImage(named: String(tag))!
             button.setImage(buttonImage, for: UIControl.State.normal)
             uv.addSubview(button)
         }
@@ -54,21 +68,32 @@ class EditFontViewController: UIViewController {
         // tagの番号によって，imageViewのimageをフィルターをつけたい
         nameEffectImageView.image = UIImage(named: String(sender.tag))
         
+        // テーマ
+        guard let theme = buttonNum else {
+            return
+        }
+        
         label.removeFromSuperview()
-        label = createLabel(text: "選手名だよ〜〜", font: UIFont.boldSystemFont(ofSize: 20))
+        label = createLabel(text: "選手名だよ〜〜", font: UIFont.boldSystemFont(ofSize: 20), theme: theme)
         self.view.addSubview(label)
         
     }
     
-    func createLabel(text: String, font: UIFont) -> UILabel{
-        let label_column: UILabel = UILabel()
-        label_column.text = text
-        label_column.font = font
+    func createLabel(text: String, font: UIFont, theme: Int) -> UILabel{
+        let label: UILabel = UILabel()
+        label.text = text
+        label.font = font
         
-        label_column.frame = CGRect(x: -150, y: 100, width: 480, height: 60)
-        label_column.transform = CGAffineTransform(rotationAngle: CGFloat(270 * CGFloat.pi / 180))
+        if theme == 3 {
+            label.frame = CGRect(x: -150, y: 100, width: 480, height: 60)
+            label.transform = CGAffineTransform(rotationAngle: CGFloat(270 * CGFloat.pi / 180))
+        } else if theme == 6 {
+            label.frame = CGRect(x: 150, y: 410, width: 330, height: 60)
+        } else if theme == 7 {
+            label.frame = CGRect(x: 150, y: 410, width: 330, height: 60)
+        }
 
-        return label_column
+        return label
     }
     
     // 画像を保存

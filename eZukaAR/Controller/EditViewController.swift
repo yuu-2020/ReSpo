@@ -17,6 +17,8 @@ class EditViewController: UIViewController {
     
     var uv: UIView = UIView()
     
+    var buttonNum: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,15 +74,18 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func theme3(_ sender: Any) {
+        buttonNum = 3
         performSegue(withIdentifier: "toTheme3", sender: nil)
     }
     
     @IBAction func theme6(_ sender: Any) {
-        performSegue(withIdentifier: "toTheme6", sender: nil)
+        buttonNum = 6
+        performSegue(withIdentifier: "toTheme3", sender: nil)
     }
     
     @IBAction func theme7(_ sender: Any) {
-        performSegue(withIdentifier: "toTheme7", sender: nil)
+        buttonNum = 7
+        performSegue(withIdentifier: "toTheme3", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -90,6 +95,7 @@ class EditViewController: UIViewController {
             let effectTarget: CGRect = self.effectImageView.bounds
             subVC.playerImage = imageView.screenShot(target: playerTarget)
             subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
+            subVC.buttonNum = buttonNum
         }
         
         if (segue.identifier == "toTheme6") {
