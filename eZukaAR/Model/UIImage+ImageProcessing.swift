@@ -1,5 +1,5 @@
 //
-//  UIView+ImageProcessing.swift
+//  UIImage+ImageProcessing.swift
 //  eZukaAR
 //
 //  Created by AsanoYudai on 2020/11/13.
@@ -51,6 +51,17 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return newImage
+    }
+    
+    /**
+     UILabel -> UIImage
+     **/
+    class func imageWithLabel(label: UILabel) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0.0)
+        label.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
     }
 }
 

@@ -36,5 +36,4 @@ public extension UIView {
 
         return image
     }
-
 }
