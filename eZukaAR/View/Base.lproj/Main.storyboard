@@ -420,7 +420,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="EQd-Gq-cfE"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfC-Lt-6cl">
-                                <rect key="frame" x="50" y="483" width="104" height="41"/>
+                                <rect key="frame" x="135" y="483" width="104" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SaveButton"/>
                                 <connections>
