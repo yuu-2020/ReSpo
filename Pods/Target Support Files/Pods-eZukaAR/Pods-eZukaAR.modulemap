@@ -1,0 +1,6 @@
+framework module Pods_eZukaAR {
+  umbrella header "Pods-eZukaAR-umbrella.h"
+
+  export *
+  module * { export * }
+}
