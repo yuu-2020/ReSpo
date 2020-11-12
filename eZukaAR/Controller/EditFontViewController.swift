@@ -121,13 +121,28 @@ class EditFontViewController: UIViewController {
     
     // 画像を保存
     @IBAction func saveCard(_ sender: Any) {
+        let frameWidth = self.view.frame.maxX
+        let frameHeight = self.view.frame.maxY
+        
         // リサイズ
-        let reImageView: UIImage = UIImage.ResizeUIImage(image: imageView.image! ,width: self.view.frame.maxX, height: self.view.frame.maxY)
-        let reEffectImageView: UIImage = UIImage.ResizeUIImage(image: effectImageView.image! ,width: self.view.frame.maxX, height: self.view.frame.maxY)
-        let reNameEffectImageView: UIImage = UIImage.ResizeUIImage(image: nameEffectImageView.image! ,width: self.view.frame.maxX, height: self.view.frame.maxY)
+        guard let reImageViewImage = imageView.image,
+              let reImage = UIImage.ResizeUIImage(image: reImageViewImage, width: frameWidth, height: frameHeight)
+        else {
+            fatalError()
+        }
+        guard let reEffectImageViewImage = effectImageView.image,
+              let reEffectImage = UIImage.ResizeUIImage(image: reEffectImageViewImage, width: frameWidth, height: frameHeight)
+        else {
+            fatalError()
+        }
+        guard let reNameEffectImageViewImage = nameEffectImageView.image,
+              let reNameEffectImage = UIImage.ResizeUIImage(image: reNameEffectImageViewImage, width: frameWidth, height: frameHeight)
+        else {
+            fatalError()
+        }
         
         // 画像を合成
-        let composedImage = UIImage.ComposeUIImage(UIImageArray: [reImageView, reEffectImageView, reNameEffectImageView], width: self.view.frame.maxX, height: self.view.frame.maxY)
+        let composedImage = UIImage.ComposeUIImage(UIImageArray: [reImage, reEffectImage, reNameEffectImage], width: frameWidth, height: frameHeight)
         
         if let data = composedImage?.pngData() {
             let filename = getDocumentsDirectory().appendingPathComponent("test.png")
