@@ -39,8 +39,13 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     
     var playerName: String = "Masuharu Taguchi"
     
+    let textField: UITextField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Delegeteを設定
+        textField.delegate = self
 
         imageView.image = editImage
         
@@ -326,7 +331,11 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     // 画像を保存
     @IBAction func saveCard(_ sender: Any) {
         // カード保存時のファイル名を設定
-        let textField: UITextField = UITextField()
+        // リターン時に保存のアクションが実行される
+        
+        // ファーストレスポンダに設定
+        textField.becomeFirstResponder()
+        // 配置場所・サイズを設定
         textField.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
         // プレースホルダを設定
         textField.placeholder = "ファイル名を入力"
@@ -363,6 +372,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     // 改行ボタンを押した時の処理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("Return")
+        
         // let cardName = cardCount.description + ".png"
         let cardName = textField.text!
         
@@ -425,6 +435,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         dialog.addAction(close)
         //実際に表示させる
         self.present(dialog, animated: true, completion: nil)
+        
         return true
     }
 
@@ -446,4 +457,11 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    // UITextField以外をタップするとフィールドを閉じる
+    // !! タッチイベント検出しているがフィールドが閉じてくれないバグ！
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("Touch")
+        textField.resignFirstResponder()
+        //　view.endEditing(true)
+    }
 }
