@@ -39,6 +39,8 @@ class EditViewController: UIViewController {
     
     var playerName: String = "Masuharu Taguchi"
     
+    var cardCount: Int = 0 // カードの保存名
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -325,6 +327,8 @@ class EditViewController: UIViewController {
     
     // 画像を保存
     @IBAction func saveCard(_ sender: Any) {
+        cardCount = cardCount + 1
+        
         // 画像を合成するための配列
         var imageArray: [UIImage] = []
         
@@ -367,14 +371,17 @@ class EditViewController: UIViewController {
          */
         
         // UILabelをUIImageとして取得
-        guard let labelImage = getImage(from: label) else { return };
-        imageArray.append(labelImage)
+        if let labelImage = getImage(from: label) {
+            imageArray.append(labelImage)
+        }
         
         // 画像を合成
         let composedImage = UIImage.ComposeUIImage(UIImageArray: imageArray, width: frameWidth, height: frameHeight)
         
         if let data = composedImage?.pngData() {
-            let filename = getDocumentsDirectory().appendingPathComponent("test.png")
+            // カード保存時のファイル名を設定
+            let cardName = cardCount.description + ".png"
+            let filename = getDocumentsDirectory().appendingPathComponent(cardName)
             try? data.write(to: filename)
         }
         
