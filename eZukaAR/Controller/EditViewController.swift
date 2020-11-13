@@ -16,7 +16,7 @@ enum editType: Int {
     case trimming = 5
 }
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController, UITextFieldDelegate {
 
     var editImage: UIImage?
     
@@ -38,8 +38,6 @@ class EditViewController: UIViewController {
     var label: UILabel = UILabel()
     
     var playerName: String = "Masuharu Taguchi"
-    
-    var cardCount: Int = 0 // カードの保存名
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -327,14 +325,49 @@ class EditViewController: UIViewController {
     
     // 画像を保存
     @IBAction func saveCard(_ sender: Any) {
-        cardCount = cardCount + 1
+        // カード保存時のファイル名を設定
+        let textField: UITextField = UITextField()
+        textField.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
+        // プレースホルダを設定
+        textField.placeholder = "ファイル名を入力"
+        // キーボードタイプを指定
+        textField.keyboardType = .default
+        // 枠線のスタイルを設定
+        textField.borderStyle = .roundedRect
+        // 改行ボタンの種類を設定
+        textField.returnKeyType = .done
+        // テキストを全消去するボタンを表示
+        textField.clearButtonMode = .always
+        // UITextFieldを追加
+        self.view.addSubview(textField)
+        // デリゲートを指定
+        textField.delegate = self
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    // UILabeを渡すとUIImageを返してくれる
+    func getImage(from label:UILabel) -> UIImage? {
+      UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
+      defer{
+          UIGraphicsEndImageContext()
+      }
+      label.drawHierarchy(in: label.bounds, afterScreenUpdates: true)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      return image
+    }
+    
+    // 改行ボタンを押した時の処理
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Return")
+        // let cardName = cardCount.description + ".png"
+        let cardName = textField.text!
         
         // 画像を合成するための配列
         var imageArray: [UIImage] = []
-        
-        // 画像サイズ
-        // let frameWidth = self.view.frame.maxX
-        // let frameHeight = self.view.frame.maxY
         
         // 画像サイズ
         // imageViewのサイズ（カードサイズ）を指定
@@ -361,15 +394,6 @@ class EditViewController: UIViewController {
             imageArray.append(reFontImage)
         }
         
-        /*
-         
-         MARK: - ラベルも画像にして保存したかったけど，文字の位置調整がうまくいかず．．．
-         
-         // テキストを画像に変換して保存
-         imageArray.append(UIImage.imageWithLabel(label: label))
-         
-         */
-        
         // UILabelをUIImageとして取得
         if let labelImage = getImage(from: label) {
             imageArray.append(labelImage)
@@ -379,9 +403,9 @@ class EditViewController: UIViewController {
         let composedImage = UIImage.ComposeUIImage(UIImageArray: imageArray, width: frameWidth, height: frameHeight)
         
         if let data = composedImage?.pngData() {
-            // カード保存時のファイル名を設定
-            let cardName = cardCount.description + ".png"
-            let filename = getDocumentsDirectory().appendingPathComponent(cardName)
+            //let cardName = "test"
+            
+            let filename = getDocumentsDirectory().appendingPathComponent(cardName + ".png")
             try? data.write(to: filename)
         }
         
@@ -401,35 +425,25 @@ class EditViewController: UIViewController {
         dialog.addAction(close)
         //実際に表示させる
         self.present(dialog, animated: true, completion: nil)
-        
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
+        return true
     }
 
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toTheme3") {
-            let subVC: EditFontViewController = segue.destination as! EditFontViewController
-            let playerTarget: CGRect = self.imageView.bounds
-            let effectTarget: CGRect = self.effectImageView.bounds
-            subVC.playerImage = imageView.screenShot(target: playerTarget)
-            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
-            subVC.buttonNum = buttonNum
-        }
-    }*/
-    
-    // UILabeを渡すとUIImageを返してくれる
-    func getImage(from label:UILabel) -> UIImage? {
-      UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
-      defer{
-          UIGraphicsEndImageContext()
-      }
-      label.drawHierarchy(in: label.bounds, afterScreenUpdates: true)
-      let image = UIGraphicsGetImageFromCurrentImageContext()
-      return image
+    // クリアボタンが押された時の処理
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        print("Clear")
+        return true
+    }
+
+    // テキストフィールドがフォーカスされた時の処理
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("Start")
+        return true
+    }
+
+    // テキストフィールドでの編集が終了する直前での処理
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("End")
+        return true
     }
     
 }
