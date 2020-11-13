@@ -8,6 +8,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AgencyFB-Bold.ttf">
+            <string>AgencyFB-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--ホーム-->
         <scene sceneID="hne-Lf-9HM">
@@ -379,6 +384,13 @@
                                     <action selector="saveCard:" destination="2KA-pc-Y9l" eventType="touchUpInside" id="nKR-fl-TrR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZR-Bq-3Y1">
+                                <rect key="frame" x="283" y="597" width="31" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AgencyFB-Bold" family="AgencyFB" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hPV-CJ-JHU"/>
                         <color key="backgroundColor" red="0.28379967810000001" green="0.3332451582" blue="0.39417603610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

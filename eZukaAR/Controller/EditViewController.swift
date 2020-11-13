@@ -39,6 +39,9 @@ class EditViewController: UIViewController {
     
     var playerName: String = "Masuharu Taguchi"
     
+    var font: UIFont = UIFont()
+    var fontSize: CGFloat = 20.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -153,7 +156,7 @@ class EditViewController: UIViewController {
                 button.tag = i
                 button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
                 button.addTarget(self, action: #selector(fontTap), for: .touchUpInside)
-                let buttonImage: UIImage = UIImage(named: String(i + 100))!
+                let buttonImage: UIImage = UIImage(named: String(i + 1000))!
                 button.setImage(buttonImage, for: UIControl.State.normal)
                 themeUv.addSubview(button)
             }
@@ -161,11 +164,24 @@ class EditViewController: UIViewController {
             themeSc.contentSize = themeUv.bounds.size
         case 3:
             edit = .fontColor
+            removeAllSubviews(parentView: themeSc)
+            removeAllSubviews(parentView: themeUv)
+            for i in 0 ..< 5 {
+                let button: UIButton = UIButton()
+                button.tag = i
+                button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
+                button.addTarget(self, action: #selector(fontColorTap), for: .touchUpInside)
+                let buttonImage: UIImage = UIImage(named: String(i + 100))!
+                button.setImage(buttonImage, for: UIControl.State.normal)
+                themeUv.addSubview(button)
+            }
+            themeSc.addSubview(self.themeUv)
+            themeSc.contentSize = themeUv.bounds.size
         case 4:
             edit = .color
             removeAllSubviews(parentView: themeSc)
             removeAllSubviews(parentView: themeUv)
-            for i in 0 ..< 6 {
+            for i in 0 ..< 5 {
                 let button: UIButton = UIButton()
                 button.tag = i
                 button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
@@ -216,80 +232,172 @@ class EditViewController: UIViewController {
         case 0: // 透明
             themeImageView.image = nil
         case 1: // 右縦
-            themeImageView.image = UIImage(named: "30")
+            themeImageView.image = UIImage(named: "200")
         case 2: // 左縦
-            themeImageView.image = UIImage(named: "40")
+            themeImageView.image = UIImage(named: "300")
         case 3: // 上
-            themeImageView.image = UIImage(named: "50")
+            themeImageView.image = UIImage(named: "400")
         case 4: // 下
-            themeImageView.image = UIImage(named: "50")
+            themeImageView.image = UIImage(named: "500")
         case 5: // 下三角
-            themeImageView.image = UIImage(named: "50")
+            themeImageView.image = UIImage(named: "600")
         case 6: // 上下三角（下が太い）
-            themeImageView.image = UIImage(named: "50")
+            themeImageView.image = UIImage(named: "700")
         case 7: //　上下三角（上が太い）
-            themeImageView.image = UIImage(named: "50")
+            themeImageView.image = UIImage(named: "800")
         default:
-            themeImageView.image = UIImage(named: "30")
+            themeImageView.image = UIImage(named: "200")
         }
     }
     
     @objc func fontTap(sender: UIButton) {
         label.removeFromSuperview()
-        print("####################")
-        label = createLabel(text: playerName, font: UIFont.boldSystemFont(ofSize: 20), theme: themeNumber)
+        switch sender.tag {
+        case 0:
+            fontSize = 30.0
+            font = UIFont(name: .agencyFBBold, size: fontSize)
+        case 1:
+            fontSize = 22.0
+            font = UIFont(name: .azoSansBold, size: fontSize)
+        case 2:
+            fontSize = 25.0
+            font = UIFont(name: .bellMTItalic, size: fontSize)
+        default:
+            fontSize = 25.0
+            font = UIFont.boldSystemFont(ofSize: fontSize)
+        }
+        label = createLabel(text: playerName, font: font, theme: themeNumber)
         self.view.addSubview(label)
+    }
+    
+    @objc func fontColorTap(sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            label.textColor = UIColor.black
+        case 1:
+            label.textColor = UIColor.red
+        case 2:
+            label.textColor = UIColor.blue
+        case 3:
+            label.textColor = UIColor.green
+        case 4:
+            label.textColor = UIColor.yellow
+        default:
+            label.textColor = UIColor.black
+        }
     }
     
     @objc func themeColorTap(sender: UIButton) {
         switch themeNumber {
         case 0:
-            switch sender.tag {
-            case 0: // 黒色
-                themeImageView.image = UIImage(named: "30")
-            case 1: // 赤色
-                themeImageView.image = UIImage(named: "31")
-            case 2: // 青色
-                themeImageView.image = UIImage(named: "32")
-            case 3:// 緑色
-                themeImageView.image = UIImage(named: "33")
-            case 4:// 黄色
-                themeImageView.image = UIImage(named: "34")
-            default:
-                themeImageView.image = UIImage(named: "30")
-            }
+            print("0")
         case 1:
             switch sender.tag {
             case 0: // 黒色
-                themeImageView.image = UIImage(named: "40")
+                themeImageView.image = UIImage(named: "200")
             case 1: // 赤色
-                themeImageView.image = UIImage(named: "41")
+                themeImageView.image = UIImage(named: "201")
             case 2: // 青色
-                themeImageView.image = UIImage(named: "42")
+                themeImageView.image = UIImage(named: "202")
             case 3:// 緑色
-                themeImageView.image = UIImage(named: "43")
+                themeImageView.image = UIImage(named: "203")
             case 4:// 黄色
-                themeImageView.image = UIImage(named: "44")
+                themeImageView.image = UIImage(named: "204")
             default:
-                themeImageView.image = UIImage(named: "40")
+                themeImageView.image = UIImage(named: "200")
             }
         case 2:
             switch sender.tag {
             case 0: // 黒色
-                themeImageView.image = UIImage(named: "50")
+                themeImageView.image = UIImage(named: "300")
             case 1: // 赤色
-                themeImageView.image = UIImage(named: "51")
+                themeImageView.image = UIImage(named: "301")
             case 2: // 青色
-                themeImageView.image = UIImage(named: "52")
+                themeImageView.image = UIImage(named: "302")
             case 3:// 緑色
-                themeImageView.image = UIImage(named: "53")
+                themeImageView.image = UIImage(named: "303")
             case 4:// 黄色
-                themeImageView.image = UIImage(named: "54")
+                themeImageView.image = UIImage(named: "304")
             default:
-                themeImageView.image = UIImage(named: "50")
+                themeImageView.image = UIImage(named: "300")
+            }
+        case 3:
+            switch sender.tag {
+            case 0: // 黒色
+                themeImageView.image = UIImage(named: "400")
+            case 1: // 赤色
+                themeImageView.image = UIImage(named: "401")
+            case 2: // 青色
+                themeImageView.image = UIImage(named: "402")
+            case 3:// 緑色
+                themeImageView.image = UIImage(named: "403")
+            case 4:// 黄色
+                themeImageView.image = UIImage(named: "404")
+            default:
+                themeImageView.image = UIImage(named: "400")
+            }
+        case 4:
+            switch sender.tag {
+            case 0: // 黒色
+                themeImageView.image = UIImage(named: "500")
+            case 1: // 赤色
+                themeImageView.image = UIImage(named: "501")
+            case 2: // 青色
+                themeImageView.image = UIImage(named: "502")
+            case 3:// 緑色
+                themeImageView.image = UIImage(named: "503")
+            case 4:// 黄色
+                themeImageView.image = UIImage(named: "504")
+            default:
+                themeImageView.image = UIImage(named: "500")
+            }
+        case 5:
+            switch sender.tag {
+            case 0: // 黒色
+                themeImageView.image = UIImage(named: "600")
+            case 1: // 赤色
+                themeImageView.image = UIImage(named: "601")
+            case 2: // 青色
+                themeImageView.image = UIImage(named: "602")
+            case 3:// 緑色
+                themeImageView.image = UIImage(named: "603")
+            case 4:// 黄色
+                themeImageView.image = UIImage(named: "604")
+            default:
+                themeImageView.image = UIImage(named: "600")
+            }
+        case 6:
+            switch sender.tag {
+            case 0: // 黒色
+                themeImageView.image = UIImage(named: "700")
+            case 1: // 赤色
+                themeImageView.image = UIImage(named: "701")
+            case 2: // 青色
+                themeImageView.image = UIImage(named: "702")
+            case 3:// 緑色
+                themeImageView.image = UIImage(named: "703")
+            case 4:// 黄色
+                themeImageView.image = UIImage(named: "704")
+            default:
+                themeImageView.image = UIImage(named: "700")
+            }
+        case 7:
+            switch sender.tag {
+            case 0: // 黒色
+                themeImageView.image = UIImage(named: "800")
+            case 1: // 赤色
+                themeImageView.image = UIImage(named: "801")
+            case 2: // 青色
+                themeImageView.image = UIImage(named: "802")
+            case 3:// 緑色
+                themeImageView.image = UIImage(named: "803")
+            case 4:// 黄色
+                themeImageView.image = UIImage(named: "804")
+            default:
+                themeImageView.image = UIImage(named: "800")
             }
         default:
-            themeImageView.image = UIImage(named: "30")
+            themeImageView.image = UIImage(named: "200")
         }
     }
     
@@ -311,13 +419,13 @@ class EditViewController: UIViewController {
             label.frame = CGRect(x: -150, y: 150, width: 480, height: 60)
             label.transform = CGAffineTransform(rotationAngle: CGFloat(270 * CGFloat.pi / 180))
         } else if theme == 4 {
-            label.frame = CGRect(x: 130, y: 510, width: 330, height: 60)
+            label.frame = CGRect(x: 120, y: 510, width: 330, height: 60)
         } else if theme == 5 {
-            label.frame = CGRect(x: 130, y: 510, width: 330, height: 60)
+            label.frame = CGRect(x: 120, y: 510, width: 330, height: 60)
         } else if theme == 6 {
-            label.frame = CGRect(x: 130, y: 510, width: 330, height: 60)
+            label.frame = CGRect(x: 120, y: 510, width: 330, height: 60)
         } else {
-            label.frame = CGRect(x: 130, y: 510, width: 330, height: 60)
+            label.frame = CGRect(x: 120, y: 510, width: 330, height: 60)
         }
 
         return label
@@ -392,18 +500,5 @@ class EditViewController: UIViewController {
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
-    }
-
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toTheme3") {
-            let subVC: EditFontViewController = segue.destination as! EditFontViewController
-            let playerTarget: CGRect = self.imageView.bounds
-            let effectTarget: CGRect = self.effectImageView.bounds
-            subVC.playerImage = imageView.screenShot(target: playerTarget)
-            subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
-            subVC.buttonNum = buttonNum
-        }
-    }
-    
+    }    
 }

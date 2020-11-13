@@ -21,6 +21,10 @@
 		67647D6B254FD1E800222C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67647D6A254FD1E800222C4E /* Assets.xcassets */; };
 		67647D6E254FD1E800222C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67647D6C254FD1E800222C4E /* LaunchScreen.storyboard */; };
 		6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67648009254FEFC400222C4E /* HomeViewController.swift */; };
+		677D3926255ECC6600B74534 /* BellMTItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 677D3923255ECC6500B74534 /* BellMTItalic.ttf */; };
+		677D3927255ECC6600B74534 /* AgencyFB-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 677D3924255ECC6500B74534 /* AgencyFB-Bold.ttf */; };
+		677D3928255ECC6600B74534 /* AzoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 677D3925255ECC6600B74534 /* AzoSans-Bold.ttf */; };
+		677D392C255ED36400B74534 /* UIFont+FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677D392B255ED36400B74534 /* UIFont+FontNames.swift */; };
 		67CE0A98255917A5007D6457 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE0A97255917A5007D6457 /* EditViewController.swift */; };
 		67F1FFD1255DD1E800F352E9 /* UIImage+ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +46,10 @@
 		67647D6D254FD1E800222C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67647D6F254FD1E800222C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67648009254FEFC400222C4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		677D3923255ECC6500B74534 /* BellMTItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BellMTItalic.ttf; sourceTree = "<group>"; };
+		677D3924255ECC6500B74534 /* AgencyFB-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AgencyFB-Bold.ttf"; sourceTree = "<group>"; };
+		677D3925255ECC6600B74534 /* AzoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AzoSans-Bold.ttf"; sourceTree = "<group>"; };
+		677D392B255ED36400B74534 /* UIFont+FontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontNames.swift"; sourceTree = "<group>"; };
 		67CE0A97255917A5007D6457 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageProcessing.swift"; sourceTree = "<group>"; };
 		94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eZukaAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +73,7 @@
 			children = (
 				674E817025599D68003BF63B /* UIView+ScreenShot.swift */,
 				67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */,
+				677D392B255ED36400B74534 /* UIFont+FontNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +130,9 @@
 				675444112555166E00ADE75F /* ezuka_main.rcproject */,
 				67647D6A254FD1E800222C4E /* Assets.xcassets */,
 				67647D6F254FD1E800222C4E /* Info.plist */,
+				677D3924255ECC6500B74534 /* AgencyFB-Bold.ttf */,
+				677D3925255ECC6600B74534 /* AzoSans-Bold.ttf */,
+				677D3923255ECC6500B74534 /* BellMTItalic.ttf */,
 			);
 			path = eZukaAR;
 			sourceTree = "<group>";
@@ -200,8 +212,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677D3927255ECC6600B74534 /* AgencyFB-Bold.ttf in Resources */,
+				677D3928255ECC6600B74534 /* AzoSans-Bold.ttf in Resources */,
 				67647D6E254FD1E800222C4E /* LaunchScreen.storyboard in Resources */,
 				67647D6B254FD1E800222C4E /* Assets.xcassets in Resources */,
+				677D3926255ECC6600B74534 /* BellMTItalic.ttf in Resources */,
 				67647D69254FD1E600222C4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +259,7 @@
 				63871EAE2559B71F004A6788 /* ProjectViewController.swift in Sources */,
 				674E1A5E2555AA2A00026A5D /* MainTabBarController.swift in Sources */,
 				674E817125599D68003BF63B /* UIView+ScreenShot.swift in Sources */,
+				677D392C255ED36400B74534 /* UIFont+FontNames.swift in Sources */,
 				6764800A254FEFC400222C4E /* HomeViewController.swift in Sources */,
 				675A481C2554699600D8183A /* ezuka01.rcproject in Sources */,
 				675A4810255461E700D8183A /* SettingViewController.swift in Sources */,
