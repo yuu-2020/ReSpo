@@ -7,17 +7,30 @@
 
 import UIKit
 
+enum editType: Int {
+    case theme = 0
+    case effect = 1
+    case font = 2
+    case fontColor = 3
+    case color = 4
+    case trimming = 5
+}
+
 class EditViewController: UIViewController {
 
     var editImage: UIImage?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var effectImageView: UIImageView!
-    @IBOutlet weak var sc: UIScrollView!
+    @IBOutlet weak var themeSc: UIScrollView!
+    @IBOutlet weak var menuSC: UIScrollView!
     
-    var uv: UIView = UIView()
+    var menuUv: UIView = UIView()
+    var themeUv: UIView = UIView()
     
     var buttonNum: Int = 0
+    
+    var edit: editType = .theme
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,24 +38,118 @@ class EditViewController: UIViewController {
         imageView.image = editImage
         
         // 位置とサイズを決める
-        uv.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*2, height: 70)
+        themeUv.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*2, height: 70)
+        menuUv.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width*2, height: 10)
         
-        // uiButtonを作成する
-        for i in 0..<7 {
+        // メニューバーのボタン横幅
+        var menuButtonWidth = 0
+        
+        // メニューバーの作成
+        for i in 0 ..< 6 {
+            var menuName: String = ""
             let button: UIButton = UIButton()
-            button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
+            
             button.tag = i
-            button.addTarget(self, action: #selector(tap), for: .touchUpInside)
-            let buttonImage: UIImage = UIImage(named: String(i+1))!
-            button.setImage(buttonImage, for: UIControl.State.normal)
-            uv.addSubview(button)
+            
+            switch i {
+            case 0:
+                menuName = "テーマ"
+                menuButtonWidth = 100
+            case 1:
+                menuName = "エフェクト"
+                menuButtonWidth = 100
+            case 2:
+                menuName = "フォント"
+                menuButtonWidth = 100
+            case 3:
+                menuName = "文字カラー"
+                menuButtonWidth = 100
+            case 4:
+                menuName = "カラー"
+                menuButtonWidth = 100
+            case 5:
+                menuName = "トリミング"
+                menuButtonWidth = 100
+            default:
+                print("ERROR")
+            }
+            button.titleLabel?.baselineAdjustment = .alignCenters
+            button.setTitle(menuName, for: UIControl.State.normal)
+            button.frame = CGRect(x: (i * menuButtonWidth), y: 0, width: menuButtonWidth, height: 30)
+            button.addTarget(self, action: #selector(menuTap), for: .touchUpInside)
+            
+            menuSC.addSubview(button)
         }
-        // scにuvを貼る
-        sc.addSubview(uv)
-        sc.contentSize = uv.bounds.size
+        
+        menuSC.addSubview(menuUv)
+        menuSC.contentSize = menuUv.bounds.size
+        
+        // themeでスクロールバーを初期化
+        for i in 0 ..< 6 {
+            
+            let button: UIButton = UIButton()
+            button.tag = i
+            button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
+            
+            button.addTarget(self, action: #selector(themeTap), for: .touchUpInside)
+            let buttonImage: UIImage = UIImage(named: String(i + 9))!
+            button.setImage(buttonImage, for: UIControl.State.normal)
+            
+            themeUv.addSubview(button)
+        }
+
+        themeSc.addSubview(themeUv)
+        themeSc.contentSize = themeUv.bounds.size
     }
     
-    @objc func tap(sender: UIButton) {
+    @objc func menuTap(sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            edit = .theme
+            removeAllSubviews(parentView: themeSc)
+            removeAllSubviews(parentView: themeUv)
+            for i in 0 ..< 6 {
+                let button: UIButton = UIButton()
+                button.tag = i
+                button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
+                button.addTarget(self, action: #selector(themeTap), for: .touchUpInside)
+                let buttonImage: UIImage = UIImage(named: String(i + 9))!
+                button.setImage(buttonImage, for: UIControl.State.normal)
+                themeUv.addSubview(button)
+            }
+            
+            themeSc.addSubview(self.themeUv)
+            themeSc.contentSize = themeUv.bounds.size
+        case 1:
+            edit = .effect
+            removeAllSubviews(parentView: themeSc)
+            removeAllSubviews(parentView: themeUv)
+            for i in 0 ..< 6 {
+                let button: UIButton = UIButton()
+                button.tag = i
+                button.frame = CGRect(x: (i*80), y: 0, width: 80, height: 80)
+                button.addTarget(self, action: #selector(effectTap), for: .touchUpInside)
+                let buttonImage: UIImage = UIImage(named: String(i + 1))!
+                button.setImage(buttonImage, for: UIControl.State.normal)
+                themeUv.addSubview(button)
+            }
+            
+            themeSc.addSubview(self.themeUv)
+            themeSc.contentSize = themeUv.bounds.size
+        case 2:
+            edit = .font
+        case 3:
+            edit = .fontColor
+        case 4:
+            edit = .color
+        case 5:
+            edit = .trimming
+        default:
+            print("ERROR")
+        }
+    }
+    
+    @objc func effectTap(sender: UIButton) {
         // tagの番号によって，imageViewのimageをフィルターをつけたい
         switch sender.tag {
         case 0:
@@ -63,14 +170,38 @@ class EditViewController: UIViewController {
         case 5:
             print("6")
             effectImageView.image = UIImage(named: "6")
-        case 6:
-            print("7")
-            effectImageView.image = UIImage(named: "7")
         default:
             break
-                
         }
         
+    }
+    
+    @objc func themeTap(sender: UIButton) {
+        
+    }
+    
+    func removeAllSubviews(parentView: UIView){
+        let subviews = parentView.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
+    
+    func createLabel(text: String, font: UIFont, theme: Int) -> UILabel{
+        let label: UILabel = UILabel()
+        label.text = text
+        label.font = font
+        
+        if theme == 3 {
+            label.frame = CGRect(x: -150, y: 100, width: 480, height: 60)
+            label.transform = CGAffineTransform(rotationAngle: CGFloat(270 * CGFloat.pi / 180))
+        } else if theme == 6 {
+            label.frame = CGRect(x: 150, y: 410, width: 330, height: 60)
+        } else if theme == 7 {
+            label.frame = CGRect(x: 150, y: 410, width: 330, height: 60)
+        }
+
+        return label
     }
 
     @IBAction func theme3(_ sender: Any) {
