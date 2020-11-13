@@ -329,8 +329,13 @@ class EditViewController: UIViewController {
         var imageArray: [UIImage] = []
         
         // 画像サイズ
-        let frameWidth = self.view.frame.maxX
-        let frameHeight = self.view.frame.maxY
+        // let frameWidth = self.view.frame.maxX
+        // let frameHeight = self.view.frame.maxY
+        
+        // 画像サイズ
+        // imageViewのサイズ（カードサイズ）を指定
+        let frameWidth = self.imageView.image!.size.width
+        let frameHeight = self.imageView.image!.size.height
         
         // リサイズ
         if let reImageViewImage = imageView.image,
@@ -361,6 +366,10 @@ class EditViewController: UIViewController {
          
          */
         
+        // UILabelをUIImageとして取得
+        guard let labelImage = getImage(from: label) else { return };
+        imageArray.append(labelImage)
+        
         // 画像を合成
         let composedImage = UIImage.ComposeUIImage(UIImageArray: imageArray, width: frameWidth, height: frameHeight)
         
@@ -368,7 +377,6 @@ class EditViewController: UIViewController {
             let filename = getDocumentsDirectory().appendingPathComponent("test.png")
             try? data.write(to: filename)
         }
-        
         
         // ダイアログをつける
         
@@ -395,7 +403,7 @@ class EditViewController: UIViewController {
     }
 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toTheme3") {
             let subVC: EditFontViewController = segue.destination as! EditFontViewController
             let playerTarget: CGRect = self.imageView.bounds
@@ -404,6 +412,17 @@ class EditViewController: UIViewController {
             subVC.effectedImage = effectImageView.screenShot(target: effectTarget)
             subVC.buttonNum = buttonNum
         }
+    }*/
+    
+    // UILabeを渡すとUIImageを返してくれる
+    func getImage(from label:UILabel) -> UIImage? {
+      UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
+      defer{
+          UIGraphicsEndImageContext()
+      }
+      label.drawHierarchy(in: label.bounds, afterScreenUpdates: true)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      return image
     }
     
 }
