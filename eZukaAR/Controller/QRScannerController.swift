@@ -6,6 +6,7 @@
 //
 import AVFoundation
 import UIKit
+
 class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     // カメラやマイクの入出力を管理するオブジェクトを生成
     private let session = AVCaptureSession()
@@ -39,14 +40,31 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                         previewLayer.videoGravity = .resizeAspectFill
                         self.view.layer.addSublayer(previewLayer)
                         
+                        // スクリーンの縦横幅
+                        let screenWidth:CGFloat = self.view.frame.width
+                        let screenHeight:CGFloat = self.view.frame.height
+                        
                         // 読み取り範囲的なものを表示（なお，特に読み取り範囲は設定しておらず見た目だけ）
                         let flameView = UIView()
                         self.view.addSubview(flameView)
-                        flameView.frame = CGRect(x:375/2-150, y:667/2-150, width:300, height:300)
+                        flameView.frame = CGRect(x:screenWidth/2-150, y:screenHeight/2-150, width:300, height:300)
                         flameView.layer.borderColor = UIColor.orange.cgColor
                         flameView.layer.borderWidth = 3
                         
-                        
+                        // QRコード表示用のボタンを追加
+                        let QRButton = UIButton()
+                        // 位置とサイズ
+                        QRButton.frame = CGRect(x:screenWidth/2-100, y:screenHeight/2+150,
+                                                width: 200, height:50)
+                        // タイトル
+                        QRButton.setTitle("QRコード表示", for: UIControl.State.normal)
+                        QRButton.setTitleColor(UIColor.orange, for: .normal)
+                        QRButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+                        // QRButton.backgroundColor = UIColor.white
+                        // タップ時のアクション
+                        QRButton.addTarget(self, action: #selector(QRScannerController.buttonTapped(_:)), for: .touchUpInside)
+                        // viewに追加
+                        self.view.addSubview(QRButton)
                         
                         // 読み取り開始
                         self.session.startRunning()
@@ -86,5 +104,26 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                 break
             }
         }
+    }
+    
+    @objc func buttonTapped(_ sender : Any) {
+        //文字列をNSDataに変換し，QRコードを作成
+        let str = "んごー"
+        let data = str.data(using: String.Encoding.utf8)!
+        
+        //QRコードを生成
+        let qr = CIFilter(name: "CIQRCodeGenerator", parameters: ["inputMessage": data, "inputCorrectionLevel": "M"])!
+        let sizeTransform = CGAffineTransform(scaleX: 10, y: 10)
+        let qrImage = qr.outputImage!.transformed(by: sizeTransform)
+        let context = CIContext()
+        let cgImage = context.createCGImage(qrImage, from: qrImage.extent)
+        let uiImage = UIImage(cgImage: cgImage!)
+        
+        //作成したQRコードを表示
+        let qrImageView = UIImageView()
+        qrImageView.contentMode = .scaleAspectFit
+        qrImageView.frame = self.view.frame
+        qrImageView.image = uiImage
+        self.view.addSubview(qrImageView)
     }
 }
