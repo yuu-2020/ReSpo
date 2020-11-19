@@ -14,6 +14,9 @@ class ARViewController: UIViewController {
     @IBOutlet weak var arView: ARView!
     @IBOutlet weak var homeButton: UIButton!
     
+    // カメラやマイクの入出力を管理するオブジェクトを生成
+    private let session = AVCaptureSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,4 +36,8 @@ class ARViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // QRコードリーダを呼び出し
+    @IBAction func shareBottunPressed(_ sender: Any) {
+        self.present(QRScannerController(), animated: true, completion: nil)
+    }
 }
