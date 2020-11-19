@@ -7,6 +7,22 @@
 import AVFoundation
 import UIKit
 
+extension UIImage {
+    /**
+     文字列からQRコードを作成
+     - parameters:
+         - text: 読み込んだ時のデータ文字列
+     */
+    static func makeQRCode(text: String) -> UIImage? {
+        guard let data = text.data(using: .utf8) else { return nil }
+        guard let QR = CIFilter(name: "CIQRCodeGenerator", parameters: ["inputMessage": data]) else { return nil }
+        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        guard let ciImage = QR.outputImage?.transformed(by: transform) else { return nil }
+        guard let cgImage = CIContext().createCGImage(ciImage, from: ciImage.extent) else { return nil }
+        return UIImage(cgImage: cgImage)
+    }
+}
+
 class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     // カメラやマイクの入出力を管理するオブジェクトを生成
     private let session = AVCaptureSession()
@@ -55,7 +71,7 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                         let QRButton = UIButton()
                         // 位置とサイズ
                         QRButton.frame = CGRect(x:screenWidth/2-100, y:screenHeight/2+150,
-                                                width: 200, height:50)
+                                                width: 300, height:50)
                         // タイトル
                         QRButton.setTitle("QRコード表示", for: UIControl.State.normal)
                         QRButton.setTitleColor(UIColor.orange, for: .normal)
@@ -107,23 +123,22 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
     }
     
     @objc func buttonTapped(_ sender : Any) {
-        //文字列をNSDataに変換し，QRコードを作成
-        let str = "んごー"
-        let data = str.data(using: String.Encoding.utf8)!
-        
         //QRコードを生成
-        let qr = CIFilter(name: "CIQRCodeGenerator", parameters: ["inputMessage": data, "inputCorrectionLevel": "M"])!
-        let sizeTransform = CGAffineTransform(scaleX: 10, y: 10)
-        let qrImage = qr.outputImage!.transformed(by: sizeTransform)
-        let context = CIContext()
-        let cgImage = context.createCGImage(qrImage, from: qrImage.extent)
-        let uiImage = UIImage(cgImage: cgImage!)
-        
+        let str = "んごー"
+        let QRImage = UIImage.makeQRCode(text: str)
+
         //作成したQRコードを表示
-        let qrImageView = UIImageView()
-        qrImageView.contentMode = .scaleAspectFit
-        qrImageView.frame = self.view.frame
-        qrImageView.image = uiImage
-        self.view.addSubview(qrImageView)
+        let QRImageView = UIImageView()
+        QRImageView.contentMode = .scaleAspectFit
+        QRImageView.frame = self.view.frame
+        QRImageView.image = QRImage
+        self.view.addSubview(QRImageView)
+        
+        
+        /* let alert = UIAlertController(title: "QRコード", message: "読み取ってください", preferredStyle: .alert)
+        let action = UIAlertAction(title: "", style: .default, handler: nil)
+        action.setValue(QRImage, forKey: "image")
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil) */
     }
 }
