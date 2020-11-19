@@ -207,7 +207,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ShareButton"/>
                                 <connections>
-                                    <segue destination="pHq-1I-4nj" kind="show" id="vbw-CN-lnF"/>
+                                    <action selector="shareBottunPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hku-ip-yt9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -224,16 +224,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224.8" y="477.21139430284859"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="SwN-Te-wCJ">
-            <objects>
-                <viewController id="pHq-1I-4nj" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="QWa-NI-8DP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iff-PO-xjQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2164" y="476.31184407796104"/>
         </scene>
         <!--設定-->
         <scene sceneID="dNI-JY-VDw">
