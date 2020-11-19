@@ -38,6 +38,16 @@ class QRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDeleg
                         previewLayer.frame = self.view.bounds
                         previewLayer.videoGravity = .resizeAspectFill
                         self.view.layer.addSublayer(previewLayer)
+                        
+                        // 読み取り範囲的なものを表示（なお，特に読み取り範囲は設定しておらず見た目だけ）
+                        let flameView = UIView()
+                        self.view.addSubview(flameView)
+                        flameView.frame = CGRect(x:375/2-150, y:667/2-150, width:300, height:300)
+                        flameView.layer.borderColor = UIColor.orange.cgColor
+                        flameView.layer.borderWidth = 3
+                        
+                        
+                        
                         // 読み取り開始
                         self.session.startRunning()
                     }
