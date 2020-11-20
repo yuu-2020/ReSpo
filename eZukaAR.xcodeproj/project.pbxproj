@@ -27,6 +27,7 @@
 		677D392C255ED36400B74534 /* UIFont+FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677D392B255ED36400B74534 /* UIFont+FontNames.swift */; };
 		67CE0A98255917A5007D6457 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CE0A97255917A5007D6457 /* EditViewController.swift */; };
 		67F1FFD1255DD1E800F352E9 /* UIImage+ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */; };
+		CABDCE012567EE3A00BB7F86 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDCE002567EE3A00BB7F86 /* QRScannerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		67F1FFD0255DD1E800F352E9 /* UIImage+ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageProcessing.swift"; sourceTree = "<group>"; };
 		94A870A838EF30374E97B45E /* Pods_eZukaAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eZukaAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B782FDBAB92E6A36DB6F4 /* Pods-eZukaAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eZukaAR.release.xcconfig"; path = "Target Support Files/Pods-eZukaAR/Pods-eZukaAR.release.xcconfig"; sourceTree = "<group>"; };
+		CABDCE002567EE3A00BB7F86 /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				67647D61254FD1E600222C4E /* AppDelegate.swift */,
 				675A48162554690800D8183A /* ARViewController.swift */,
+				CABDCE002567EE3A00BB7F86 /* QRScannerController.swift */,
 				675A480F255461E700D8183A /* SettingViewController.swift */,
 				67648009254FEFC400222C4E /* HomeViewController.swift */,
 				674E1A5D2555AA2A00026A5D /* MainTabBarController.swift */,
@@ -256,6 +259,7 @@
 				67F1FFD1255DD1E800F352E9 /* UIImage+ImageProcessing.swift in Sources */,
 				67647D62254FD1E600222C4E /* AppDelegate.swift in Sources */,
 				675A48172554690800D8183A /* ARViewController.swift in Sources */,
+				CABDCE012567EE3A00BB7F86 /* QRScannerController.swift in Sources */,
 				63871EAE2559B71F004A6788 /* ProjectViewController.swift in Sources */,
 				674E1A5E2555AA2A00026A5D /* MainTabBarController.swift in Sources */,
 				674E817125599D68003BF63B /* UIView+ScreenShot.swift in Sources */,
