@@ -461,11 +461,6 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
     // UILabeを渡すとUIImageを返してくれる
     func getImage(from label:UILabel) -> UIImage? {
       UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
